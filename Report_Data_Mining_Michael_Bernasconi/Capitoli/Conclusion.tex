@@ -1,0 +1,23 @@
+
+\chapter{Conclusion}
+
+\section{Summary of Contributions}
+This project provided a comprehensive analytical overview of demand dynamics for the Uber service in New York City. By integrating \textit{clustering} techniques for spatial analysis, graph theory for mobility flows, and \textit{machine learning} for prediction, actionable \textit{insights} were generated.
+
+The main result is a highly performant \textit{Random Forest} regression model ($R^2 = 0.854$) capable of accurately estimating hourly demand based on temporal features (hour, weekday, month).
+
+\section{Practical Implications and Future Perspectives}
+
+\subsection{Operational Implications}
+The findings have direct strategic value:
+\begin{itemize}
+    \item \textbf{Fleet Allocation:} Transport companies can use hourly predictions and weekly patterns to optimize dynamic vehicle allocation, minimizing user waiting times and maximizing operational efficiency.
+    \item \textbf{Urban Planning:} Data on flows and concentrations of \textit{pickups} in the 10 identified zones can help urban planners assess the impact of the service on congestion in specific areas of the city and during critical time slots.
+\end{itemize}
+
+\subsection{Future Work}
+To further extend the scope and accuracy of this analysis, the following future developments are suggested:
+\begin{itemize}
+    \item \textbf{Integration of External Variables:} Model accuracy could be improved by including additional \textit{features} not considered, such as weather data, holidays, major city events, or price fluctuations.
+    \item \textbf{Fine-Grained Analysis:} A deeper analysis of flows, not only between the 10 \textit{clusters} but also within high-density zones, could identify \textit{micro-hotspots} and specific bottlenecks.
+\end{itemize}

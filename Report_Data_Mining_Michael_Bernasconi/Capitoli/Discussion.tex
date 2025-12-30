@@ -1,0 +1,27 @@
+\chapter{Discussion}
+
+The analysis of the \textit{Uber Pickups} dataset in New York City (May–September 2014) fully achieved the project’s objectives: understanding the spatial behavior of demand, analyzing temporal trends, and developing a robust predictive model.
+
+\section{Summary and Interpretation of Results}
+
+\subsection{Spatial Dynamics and Mobility Flows}
+The application of the \textit{K-Means Clustering} algorithm successfully identified 10 distinct zones (\textit{clusters}) of \textit{pickup} activity in New York City. These zones represent the main demand \textit{hotspots}, primarily concentrated in high-density areas such as Manhattan.
+
+The analysis of mobility flows, modeled using a Directed Graph with \textit{NetworkX}, provided a critical view of the dynamic movement between these \textit{clusters}. The edge weights in the graph, corresponding to the frequency of transitions, highlight the busiest routes. This information is essential not only for optimizing Uber’s fleet distribution but also for urban authorities to analyze and manage traffic congestion at critical points.
+
+\subsection{Temporal Trends and Demand Behavior}
+Data exploration confirmed the existence of strong and predictable temporal patterns:
+\begin{itemize}
+    \item \textbf{Hourly Variation:} The data show two well-defined demand peaks, in line with commuting flows: a secondary peak in the morning (7:00–8:00) and the main peak in the evening (17:00–18:00), corresponding to the return from offices. Demand is lowest during nighttime hours (3:00–5:00).
+    \item \textbf{Weekly Variation:} Activity is consistently high on weekdays, but \textbf{Saturday} records the highest volume of \textit{pickups}, reflecting leisure and nightlife-oriented usage.
+    \item \textbf{Monthly Variation:} Activity gradually increases over the analyzed period, with August and September showing the highest ride volumes.
+\end{itemize}
+
+\subsection{Predictive Model Performance}
+The \textit{Random Forest} regression model demonstrated exceptional effectiveness in predicting hourly demand:
+\begin{itemize}
+    \item The \textbf{Coefficient of Determination ($R^2$)} of $0.854$ indicates that 85.4\% of the total variability in hourly \textit{pickups} is explained by the model’s temporal features (hour, weekday, month).
+    \item The visualization of the correlation between predicted and actual values shows a tight alignment along the $y=x$ diagonal, confirming high predictive accuracy.
+    \item The simulation of hourly patterns demonstrates that the model can accurately replicate daily and weekly fluctuations, clearly distinguishing between weekdays and \textit{weekends}.
+\end{itemize}
+Despite the relatively high MSE value ($60,202.36$) due to the scale of the target variable, the $R^2$ confirms that the predictions are robust and suitable for operational purposes.

@@ -1,0 +1,29 @@
+\chapter{Methods and Algorithms}
+This section describes the main tools, methods, and algorithms used for data pre-processing, spatial and temporal analysis, and the development of the predictive model for New York City \textit{Uber Pickups}.
+
+\section{Basic Tools and Pre-processing}
+The analyses were conducted using the main scientific Python libraries:
+\begin{itemize}
+    \item \textbf{Pandas and NumPy:} used for loading and merging \textit{DataFrames}, converting the \textit{Date/Time} column, and performing temporal \textit{feature engineering} (hour, day of the week, and month).
+    \item \textbf{Scikit-learn:} employed as a \textit{toolkit} for implementing clustering algorithms and the regression model.
+\end{itemize}
+
+\section{K-Means Clustering}
+The \textbf{K-Means Clustering} algorithm was applied for spatial data analysis.
+\begin{itemize}
+    \item \textbf{Objective:} to identify and define 10 spatial clusters (zones) by grouping \textit{pickups} into homogeneous activity areas in New York City.
+    \item \textbf{Method:} applied to geographic coordinates (Latitude and Longitude), the algorithm partitions the data into $k$ clusters. The centroids of the clusters identify the central location of each zone.
+\end{itemize}
+
+\section{Spatial Visualization and Density Analysis}
+For the geographic representation and density analysis of pickups, the \textbf{Folium} library was used, which allows the creation of interactive maps based on OpenStreetMap. This library enables the visualization of spatial data in a clear and immediate way, highlighting areas with higher concentrations of events. Thanks to Folium, it is possible to add markers, circles, and informative popups for each identified cluster, facilitating the identification of the main pickup points (hotspots) and providing a better understanding of the spatial distribution of transportation demand.
+\section{Flow Analysis with Graph Networks}
+To understand mobility patterns and the main movement flows between the clusters, network analysis was performed.
+\begin{itemize}
+    \item \textbf{NetworkX:} the library was used to model and visualize transitions between clusters as a Directed Graph.
+    \item \textbf{Modeling:} nodes represent the 10 clusters; directed edges indicate consecutive transitions of a \textit{pickup} from one cluster to another. The edge weight corresponds to the frequency of these transitions.
+\end{itemize}
+
+\section{Predictive Model: Random Forest Regressor}
+To forecast hourly \textit{pickup} demand based on temporal variables, the Random Forest Regressor was employed, chosen for its robustness against \textit{overfitting} and its ability to effectively handle non-linear data. The model demonstrated a strong capability to capture hourly and daily trends, enabling accurate prediction of future demand.
+

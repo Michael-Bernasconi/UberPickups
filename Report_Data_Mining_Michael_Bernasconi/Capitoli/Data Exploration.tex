@@ -1,0 +1,63 @@
+\chapter{Data Exploration}
+Exploratory Data Analysis (EDA) was conducted to identify the spatial patterns and temporal dynamics characterizing the use of the Uber service in New York City between May and September 2014. This exploration is crucial for providing the necessary context for the subsequent modeling phase and for confirming preliminary pre-processing results.
+
+\section{Basic Analysis and Pre-processing}
+In this initial phase, the aim is to identify the areas where pickups are most concentrated and to understand the spatial distribution of the data. The following figures show both a graph-based and a map-based representation of the pickup distribution, allowing a clear visualization of the areas with the highest activity within the city.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Immagini/Graph/1.1.png}
+    \caption{Pickup distribution represented as a graph (1.1).}
+    \label{fig:base1}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Immagini/Graph/1.2.png}
+    \caption{Pickup distribution represented as a map (1.2).}
+    \label{fig:base2}
+\end{figure}
+
+\section{Temporal Trends: Daily, Weekly and Monthly Analysis}
+This section analyzes how pickup activity varies over time, identifying daily, weekly, and monthly patterns.
+
+\subsection{Daily Hourly Variation}
+Uber activity shows a clear daily trend (Figure \ref{fig:oraria}), influenced by commuting flows and evening activities.
+
+\begin{itemize}
+    \item \textbf{Peak hours:} Activity reaches its peak between \textbf{17:00 and 18:00}, corresponding to the return from offices. A secondary peak is observed between 07:00 and 08:00.
+    \item \textbf{Quiet hours:} Traffic is minimal between 02:00 and 04:00.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Immagini/Graph/2.1.png}
+    \caption{Pickup frequency as a function of the time of day.}
+    \label{fig:oraria}
+\end{figure}
+
+\subsection{Weekly Variation}
+Weekly analysis (Figure \ref{fig:settimanale}) shows a clear distinction between weekdays and weekends:
+
+\begin{itemize}
+    \item \textbf{Weekdays (Monday–Friday):} Activity is consistently high, in line with work-related demand.
+    \item \textbf{Weekend:} Saturday records the highest volume of pickups, suggesting usage oriented toward leisure and nightlife, with a slight decrease on Sunday.
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Immagini/Graph/2.2.png}
+    \caption{Pickup frequency by day of the week.}
+    \label{fig:settimanale}
+\end{figure}
+
+\subsection{Monthly Variation}
+The monthly analysis highlights the number of pickups recorded in each month between May and September 2014, clearly showing that the months with the highest number of rides are August and September.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Immagini/Graph/2.3.png}
+    \caption{Pickup frequency by month.}
+    \label{fig:var_base}
+\end{figure}
+

@@ -1,0 +1,51 @@
+\chapter{Modelling and Results}
+
+\section{Random Forest Regression Model}
+The task of predicting the number of hourly \textit{pickups} was tackled using a \textbf{Random Forest} regression model.
+
+The \textit{Random Forest} is an \textit{ensemble} algorithm that aggregates the predictions of multiple decision trees to improve accuracy and reduce overfitting. The final prediction of the regression model is calculated as the average of the predictions from all individual trees.
+
+This model was chosen because of its stability, its ability to handle non-linear relationships in the data, and its effectiveness in capturing complex interactions between temporal variables (such as hour of the day, day of the week, and month), which are critical for accurate demand forecasting.
+
+\subsection{Analysis and Visualization of Predictions}
+The effectiveness of the \textit{Random Forest} model is demonstrated by a visual comparison between predicted and actual values (Figure~\ref{fig:confronto_predizioni}) and by an analysis of hourly demand patterns (Figure~\ref{fig:pattern_orari}).
+
+\subsubsection{Comparison Between Predicted and Actual Values}
+Figure~\ref{fig:confronto_predizioni} shows the scatter plot of the data points, where the X-axis represents the actual number of \textit{pickups} (\textit{Actual Pickups}) and the Y-axis represents the predicted number (\textit{Predicted Pickups}). The goal is for the points to cluster as closely as possible along the $y=x$ diagonal, which represents a perfect match between prediction and reality.  
+The close alignment of the points to the diagonal, especially for values up to 2000 \textit{pickups}, indicates the high predictive accuracy of the model.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Immagini/Graph/3.1.png}
+    \caption{Comparison between actual and predicted pickups using the Random Forest model. Points aligned along the diagonal indicate high accuracy.}
+    \label{fig:confronto_predizioni}
+\end{figure}
+
+\subsubsection{Hourly Demand Patterns by Day of the Week}
+Figure~\ref{fig:pattern_orari} presents a simulation of how hourly demand (\textit{Predicted Pickups}) varies depending on the hour of the day (\textit{Hour of Day}) and the day of the week (\textit{Weekday}, where 1=Monday and 7=Sunday). This graph allows us to identify clear commuting peaks (morning and evening) on weekdays and higher, more prolonged nighttime and leisure demand patterns typical of weekends (lines 6 and 7).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Immagini/Graph/3.2.png}
+    \caption{Simulated hourly trend of pickups by day of the week (1=Monday, 7=Sunday). Patterns highlight clear evening peaks, particularly on weekends.}
+    \label{fig:pattern_orari}
+\end{figure}
+
+\section{Evaluation of Performance Metrics}
+The performance of the \textit{Random Forest} regression model was quantified using standard metrics on the \textit{test set} to validate its effectiveness.
+
+\subsection{Mean Squared Error (MSE)}
+The Mean Squared Error (MSE) measures the average squared difference between predicted and actual values. In simple terms, it indicates how far off the predictions are from reality on average.
+
+\begin{itemize}
+    \item \textbf{MSE Value:} 60202.36
+    \item \textbf{Interpretation:} The relatively high value is due to the large scale of the target variable (number of pickups). While it does not have a fixed “good” threshold, a lower MSE would indicate that the model’s predictions are closer to the actual values. The MSE should always be interpreted together with the $R^2$ coefficient.
+\end{itemize}
+
+\subsection{Coefficient of Determination ($R^2$)}
+The $R^2$ coefficient indicates how much of the variability in the target variable is explained by the model. It is expressed as a percentage, where 100\% means a perfect fit.
+
+\begin{itemize}
+    \item \textbf{$R^2$ Value:} 0.854
+    \item \textbf{Interpretation:} The model explains about 85.4\% of the variability in hourly \textit{pickups}. This means that the features included in the model (e.g., hour of day, day of week, location) capture most of the factors that influence demand. An $R^2$ close to 1 confirms the \textbf{excellent predictive capability} of the Random Forest model.
+\end{itemize}
